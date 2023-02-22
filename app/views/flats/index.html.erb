@@ -1,0 +1,58 @@
+<nav class="navbar navbar-light bg-light">
+  Simple Airbnb
+
+  <div >
+    <%= link_to new_flat_path do %>
+      <p class="btn btn-primary">Create a new flat</p>
+    <% end %>
+  </div>
+</nav>
+
+
+<div class="container">
+    <h1>All our flats</h1>
+    <div class="row align-items-center">
+    <% @flats.each do |flat| %>
+      <%= link_to flat_path(flat) do %>
+        <div class="col-10 col-lg-4">
+          <div class="card my-2" style="width: 18rem;">
+              <div class="card-body-top">
+                <h3 class="card-title"><%= flat.name %></h3>
+                <p class="card-text"><%= flat.description %></p>
+                <div class="d-flex logo">
+                  <div class="d-flex people">
+                  <i class="fa-solid fa-user-group"></i>
+                  <p><%= flat.number_of_guests %></p>
+                  </div>
+                  <div class="d-flex price">
+                  <i class="fa-solid fa-euro-sign"></i>
+                  <p><%= flat.price_per_night %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body-bottom">
+                <a href="#" class="btn btn-primary">More info</a>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
